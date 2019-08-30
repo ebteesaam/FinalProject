@@ -35,7 +35,6 @@ public class MainActivityFragment extends Fragment {
         Button button=root.findViewById(R.id.instructions_button);
         TextView textView= root.findViewById(R.id.instructions_text_view);
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(getContext(), "Manfred"));
         // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device. e.g.
         // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
@@ -54,6 +53,8 @@ public class MainActivityFragment extends Fragment {
                 intent.putExtra("Joke",wizardJoke);
                 startActivity(intent);
                 Toast.makeText(getContext(), wizardJoke, Toast.LENGTH_LONG).show();
+                new EndpointsAsyncTask().execute(new Pair<Context, String>(getContext(), "Manfred"));
+
             }
         });
 
