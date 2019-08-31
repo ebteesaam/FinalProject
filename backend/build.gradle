@@ -1,10 +1,10 @@
 // If you would like more information on the gradle-appengine-plugin please refer to the github page
 // https://github.com/GoogleCloudPlatform/gradle-appengine-plugin
 //apply plugin: 'appengine'
-apply plugin: 'java'
+/*apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'com.google.cloud.tools.appengine'
-apply plugin: 'com.google.cloud.tools.endpoints-framework-server'
+apply plugin: 'com.google.cloud.tools.endpoints-framework-server'*/
 //apply plugin: 'appengine'
 buildscript {
     repositories {
@@ -21,11 +21,11 @@ buildscript {
 repositories {
     jcenter()
 }
-//
-//apply plugin: 'java'
-//apply plugin: 'war'
-//apply plugin: 'com.google.cloud.tools.appengine'
-//apply plugin: 'com.google.cloud.tools.endpoints-framework-server'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'com.google.cloud.tools.appengine'
+apply plugin: 'com.google.cloud.tools.endpoints-framework-server'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8

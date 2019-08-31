@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.util.Pair;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,14 +35,23 @@ public class MainActivityFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
         Button button=root.findViewById(R.id.instructions_button);
         TextView textView= root.findViewById(R.id.instructions_text_view);
-        AdView mAdView = (AdView) root.findViewById(R.id.adView);
+
         // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device. e.g.
         // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-        mAdView.loadAd(adRequest);
+
+            //if(root.findViewById(R.id.adView)!=null){
+                AdView mAdView = (AdView) root.findViewById(R.id.adView);
+                AdRequest adRequest = new AdRequest.Builder()
+                        .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                        .build();
+                mAdView.loadAd(adRequest);
+           // }
+
+        Log.e("Free","Free fragment");
+
+
+        //mAdView.setVisibility(View.INVISIBLE);
 
 
         button.setOnClickListener(new View.OnClickListener() {
